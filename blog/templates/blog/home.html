@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Primeiro Template</title>
+</head>
+<body>
+    <h1>Lista de Posts Cadastrados</h1>
+    <ul>
+        {% for post in posts %}
+        <a href="{% url 'post_detail' post.id %}"><li>{{ post.titulo }} | {{ post.autor }}</li></a>
+        {% endfor %}
+    </ul>
+    {% load static %}
+    <img src="{% static 'blog/logo.png' %}" alt="Imagem de Exemplo">
+</body>
+</html>
